@@ -10,7 +10,6 @@ from PyQt5.QtWidgets import (
     QLineEdit,
     QTextEdit
 )
-from PyQt5.QtGui import *
 
 class MyApplication(QWidget):
 	def __init__(self):

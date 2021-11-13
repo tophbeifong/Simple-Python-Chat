@@ -1,0 +1,13 @@
+{
+	"config":[
+		{
+			"get_addr":"http://localhost/pymessenger/messages.json",
+			"post_addr":"http://localhost/pymessenger/post.py"
+		}
+	],
+	"user":[
+		{
+			"username":"Peteloaf"
+		}
+	]
+}

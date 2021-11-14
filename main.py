@@ -2,6 +2,7 @@ import sys
 import requests
 import json
 from errorhandling import Error
+from PyQt5.QtGui import QTextCursor
 from PyQt5.QtWidgets import (
     QApplication,
     QVBoxLayout,
@@ -10,6 +11,7 @@ from PyQt5.QtWidgets import (
     QLineEdit,
     QTextEdit
 )
+
 
 class MyApplication(QWidget):
 	def __init__(self):
@@ -62,6 +64,7 @@ class MyApplication(QWidget):
 		self.get_messages(message_box)
 
 	def build_window(self):		
+		#Window UI controls
 		self.setWindowTitle("ChatWindow")
 		self.setGeometry(300,300,750,250)
 		layout = QVBoxLayout()
@@ -71,7 +74,7 @@ class MyApplication(QWidget):
 		message_box.setReadOnly(True)
 		self.get_messages(message_box)
 		self.text_area = QLineEdit(self)
-		self.text_area.returnPressed.connect( lambda: self.post_message( self.text_area.text(), self.text_area, message_box ) )
+		self.text_area.returnPressed.connect( lambda: self.post_message( config_data, self.text_area.text(), self.text_area, message_box ) )
 
 		sendButton = QPushButton("Send Message")
 		sendButton.setFixedWidth(100)
